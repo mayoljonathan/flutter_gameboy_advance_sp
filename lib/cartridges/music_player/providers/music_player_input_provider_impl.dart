@@ -6,58 +6,85 @@ class MusicPlayerInputProviderImpl implements SystemInputProvider {
 
   @override
   void onActionATap() {
-    print('[MusicPlayerInputProviderImpl] A tapped!');
-    _musicPlayer.decrement();
+    _musicPlayer.playOrResume();
   }
 
   @override
   void onActionBTap() {
-    print('[MusicPlayerInputProviderImpl] B tapped!');
-    _musicPlayer.increment();
-  }
-
-  @override
-  void onDirectionalDownTap() {
-    print('[MusicPlayerInputProviderImpl] Down tapped!');
-  }
-
-  @override
-  void onDirectionalLeftTap() {
-    print('[MusicPlayerInputProviderImpl] Left tapped!');
-  }
-
-  @override
-  void onDirectionalRightTap() {
-    print('[MusicPlayerInputProviderImpl] Right tapped!');
+    _musicPlayer.stop();
   }
 
   @override
   void onDirectionalUpTap() {
-    print('[MusicPlayerInputProviderImpl] Up tapped!');
+    _musicPlayer.playlistSelectDirection(PlaylistSelectDirection.up);
   }
 
   @override
-  void onMenuTap() {
-    print('[MusicPlayerInputProviderImpl] Menu tapped!');
+  void onDirectionalDownTap() {
+    _musicPlayer.playlistSelectDirection(PlaylistSelectDirection.down);
   }
 
   @override
-  void onSelectTap() {
-    print('[MusicPlayerInputProviderImpl] Select tapped!');
+  void onDirectionalLeftTap() {
+    _musicPlayer.skipPrevious();
   }
+
+  @override
+  void onDirectionalRightTap() {
+    _musicPlayer.skipNext();
+  }
+
+  @override
+  void onMenuTap() {}
+
+  @override
+  void onSelectTap() {}
 
   @override
   void onShoulderLeftTap() {
-    print('[MusicPlayerInputProviderImpl] Shoulder-L tapped!');
+    _musicPlayer.toggleLoop();
   }
 
   @override
   void onShoulderRightTap() {
-    print('[MusicPlayerInputProviderImpl] Shoulder-R tapped!');
+    _musicPlayer.toggleShuffle();
   }
 
   @override
   void onStartTap() {
-    print('[MusicPlayerInputProviderImpl] Start tapped!');
+    _musicPlayer.pause();
   }
+
+  @override
+  void onStartLongPress() {}
+
+  @override
+  void onActionALongPress() {}
+
+  @override
+  void onActionBLongPress() {}
+
+  @override
+  void onDirectionalDownLongPress() {}
+
+  @override
+  void onDirectionalLeftLongPress() {}
+
+  @override
+  void onDirectionalRightLongPress() {}
+
+  @override
+  void onDirectionalUpLongPress() {}
+
+  @override
+  void onMenuLongPress() {}
+
+  @override
+  void onSelectLongPress() {}
+
+  @override
+  void onShoulderLeftLongPress() {}
+
+  @override
+  void onShoulderRightLongPress() {}
 }

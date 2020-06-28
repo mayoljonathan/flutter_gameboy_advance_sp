@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
             image: AssetImage(Assets.GAMEBOY_ADVANCE_SP_SKIN),
           ),
           DisplayScreen(),
-          InputOverlay()
+          InputOverlay(),
         ],
       ),
     );

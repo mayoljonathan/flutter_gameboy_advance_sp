@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-import 'cartridges/music_player/music_player.dart';
+import 'cartridges/music_player/music_player_cartridge.dart';
 import 'cartridges/music_player/providers/music_player_input_provider_impl.dart';
 import 'cartridges/music_player/providers/music_player_provider.dart';
 import 'providers/system_input_provider_impl.dart';
@@ -19,12 +19,12 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await SystemChrome.setEnabledSystemUIOverlays([]);
 
-  runApp(MyApp());
+  runApp(Gameboy());
 
-  _system.loadCartridge(MusicPlayer());
+  _system.loadCartridge(MusicPlayerCartridge());
 }
 
-class MyApp extends StatelessWidget {
+class Gameboy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Gameboy Advance SP',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         debugShowCheckedModeBanner: false,

@@ -19,6 +19,7 @@ class CircleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => context.read<SystemInputProviderImpl>().onTap(input),
+      onLongPress: () => context.read<SystemInputProviderImpl>().onLongPress(input),
       child: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,

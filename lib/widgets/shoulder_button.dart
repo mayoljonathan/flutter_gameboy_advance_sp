@@ -14,6 +14,7 @@ class ShoulderButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => context.read<SystemInputProviderImpl>().onTap(input),
+      onLongPress: () => context.read<SystemInputProviderImpl>().onLongPress(input),
       child: Container(
         color: kReleaseMode ? Colors.transparent : Colors.yellow.withOpacity(0.3),
         width: 68,
