@@ -1,16 +1,17 @@
-# flutter_gameboy_advance_sp
+<a href="https://www.youtube.com/watch?v=6BeX6jx8bqE">
+  <img src="https://img.youtube.com/vi/6BeX6jx8bqE/maxresdefault.jpg" title="Flutter Gameboy" alt="Flutter Gameboy">
+</a>
 
-A new Flutter project.
+# Flutter Gameboy
 
-## Getting Started
+> <a href="https://www.youtube.com/watch?v=6BeX6jx8bqE">See demo video</a> of Flutter Hackathon entry for Retro Theme! #Hack20
 
-This project is a starting point for a Flutter application.
+Never held a Gameboy console? This app simulates the look of a Gameboy Advance SP. It can load/unload cartridges which are Widgets in the app's source code! The system controls (d-pad, buttons) implementation are dynamic, so every cartridge controls do different things!
 
-A few resources to get you started if this is your first Flutter project:
+## Cartridges available
+- Music Player
+- Flutter Counter
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Web Version (unstable)
+https://mayoljonathan.github.io/flutter_gameboy_advance_sp
+> Not fully responsive and layout breaks
