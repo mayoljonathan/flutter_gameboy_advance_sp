@@ -1,4 +1,5 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
@@ -64,13 +65,20 @@ class Player extends StatelessWidget {
                       height: 28,
                       child: Selector<MusicPlayerProvider, Audio>(
                         selector: (_, MusicPlayerProvider model) => model.currentAudioPlaying,
-                        builder: (_, Audio currentAudio, __) => Marquee(
-                          key: UniqueKey(),
-                          text: currentAudio?.metas?.title ?? ' ',
-                          blankSpace: 50,
-                          velocity: 25,
-                          startPadding: 8,
-                        ),
+                        builder: (_, Audio currentAudio, __) => kIsWeb
+                            ? Text(
+                                currentAudio?.metas?.title ?? '',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: false,
+                              )
+                            : Marquee(
+                                key: UniqueKey(),
+                                text: currentAudio?.metas?.title ?? ' ',
+                                blankSpace: 50,
+                                velocity: 25,
+                                startPadding: 8,
+                              ),
                       ),
                     ),
                   ),
