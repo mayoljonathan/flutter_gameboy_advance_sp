@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -29,8 +31,10 @@ List<CartRidge> _cartRidges = [
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  await SystemChrome.setEnabledSystemUIOverlays([]);
+  if (!kIsWeb) {
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    await SystemChrome.setEnabledSystemUIOverlays([]);
+  }
 
   _system.selectCartridge(_cartRidges.first);
 
@@ -57,13 +61,11 @@ class Gameboy extends StatelessWidget {
         builder: (_, child) {
           return ResponsiveWrapper.builder(
             child,
-            maxWidth: 1200,
+            maxWidth: 480,
             minWidth: 480,
             defaultScale: true,
             breakpoints: [
               ResponsiveBreakpoint.resize(480, name: MOBILE),
-              ResponsiveBreakpoint.autoScale(800, name: TABLET),
-              ResponsiveBreakpoint.resize(1000, name: DESKTOP),
             ],
           );
         },
