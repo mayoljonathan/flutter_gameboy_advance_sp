@@ -22,6 +22,8 @@ class MusicPlayerProvider extends ChangeNotifier {
   int _musicListIndex = 0;
   int get musicListIndex => _musicListIndex;
 
+  Music get currentMusicSelection => musicList[musicListIndex];
+
   // Playlist
   List<Audio> _playlist = [];
   List<Audio> get playlist => _playlist;
@@ -96,8 +98,9 @@ class MusicPlayerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Audio _getAudioByIndex(int index) {
-    return _audioPlayer.playlist.audios.elementAt(index);
+  Audio _getCurrentMusic() {
+    return _audioPlayer.playlist.audios
+        .firstWhere((Audio audio) => audio.metas.id.toString() == currentMusicSelection.hashCode.toString());
   }
 
   Audio _getCurrentPlayingAudio() {
@@ -106,7 +109,7 @@ class MusicPlayerProvider extends ChangeNotifier {
 
   // Controls
   void playOrResume() {
-    final Audio selectedAudioInPlaylist = _getAudioByIndex(_musicListIndex);
+    final Audio selectedAudioInPlaylist = _getCurrentMusic();
     final Audio currentPlayingAudio = _getCurrentPlayingAudio();
 
     if (selectedAudioInPlaylist == currentPlayingAudio) {
@@ -193,26 +196,27 @@ class MusicPlayerProvider extends ChangeNotifier {
 
   // Selections
   void playlistSelectDirection(PlaylistSelectDirection playlistSelectDirection) {
+    print(currentMusicSelection.name);
     if (playlistSelectDirection == PlaylistSelectDirection.up) {
       if (_musicListIndex != 0) {
         _musicListIndex--;
-        _currentPlaylistSelection = _getAudioByIndex(_musicListIndex);
+        _currentPlaylistSelection = _getCurrentMusic();
         notifyListeners();
 
-        _playlistScrollToIndex();
+        _playlistScrollToSelection();
       }
     } else {
       if (_musicListIndex != (_musicList.length - 1)) {
         _musicListIndex++;
-        _currentPlaylistSelection = _getAudioByIndex(_musicListIndex);
+        _currentPlaylistSelection = _getCurrentMusic();
         notifyListeners();
 
-        _playlistScrollToIndex();
+        _playlistScrollToSelection();
       }
     }
   }
 
-  void _playlistScrollToIndex() {
+  void _playlistScrollToSelection() {
     _itemScrollController.scrollTo(
       index: _musicListIndex,
       duration: const Duration(milliseconds: 200),
@@ -226,13 +230,7 @@ class MusicPlayerProvider extends ChangeNotifier {
 
     if (playerState == PlayerState.play) {
       final Audio playingAudio = _getCurrentPlayingAudio();
-      _musicListIndex = musicList.indexWhere((Music music) => music.hashCode.toString() == playingAudio.metas.id);
-      print('[Now Playing - $_musicListIndex]: ${playingAudio.metas.title}');
-
       _currentAudioPlaying = playingAudio;
-      _currentPlaylistSelection = currentAudioPlaying;
-
-      _playlistScrollToIndex();
     } else if (playerState == PlayerState.stop) {
       _currentAudioPlaying = null;
     }
