@@ -19,6 +19,10 @@ Never held a Gameboy console? This app simulates the look of a Gameboy Advance S
 ## Mobile Version
 [Download Android APK](https://github.com/mayoljonathan/flutter_gameboy_advance_sp/releases/download/v1.0.0/flutter_gameboy.v1.0.0.apk)
 
+## Screenshots
+| <img src="https://raw.githubusercontent.com/mayoljonathan/flutter_gameboy_advance_sp/master/docs/screenshots/screenshot1.jpg" width="350"> | <img src="https://raw.githubusercontent.com/mayoljonathan/flutter_gameboy_advance_sp/master/docs/screenshots/screenshot2.jpg" width="350"> |
+| ------------- |-------------|
+
 ## Assets
 I trimmed the flutter videos and convert it to mp3 using https://youtube-cutter.org/
 - [Atlantis International Font](https://www.fontspace.com/atlantis-international-font-f31357)
