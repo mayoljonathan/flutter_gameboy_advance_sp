@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gameboy_advance_sp/cartridges/music_player/config/music_player_colors.dart';
 
-import '../../widgets/title_banner.dart';
-import '../../widgets/black_container.dart';
-import '../../widgets/player.dart';
+import '../widgets/black_container.dart';
+import '../widgets/player.dart';
+import '../widgets/title_banner.dart';
+import '../config/music_player_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

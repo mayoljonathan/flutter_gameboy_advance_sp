@@ -1,10 +1,10 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gameboy_advance_sp/cartridges/music_player/config/music_player_colors.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import '../music_player/providers/music_player_provider.dart';
+import '../config/music_player_colors.dart';
+import '../providers/music_player_provider.dart';
 import 'black_container.dart';
 
 class MyPlaylist extends StatefulWidget {

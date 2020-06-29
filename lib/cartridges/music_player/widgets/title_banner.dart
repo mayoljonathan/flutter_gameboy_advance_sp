@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/assets.dart';
+import '../../../config/assets.dart';
 
 class TitleBanner extends StatelessWidget {
   @override

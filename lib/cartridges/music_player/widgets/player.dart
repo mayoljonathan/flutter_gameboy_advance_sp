@@ -1,11 +1,11 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:flutter_gameboy_advance_sp/cartridges/widgets/custom_slider_thumb_rect.dart';
-import 'package:marquee/marquee.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
 
-import '../music_player/config/music_player_colors.dart';
-import '../music_player/providers/music_player_provider.dart';
+import '../widgets/custom_slider_thumb_rect.dart';
+import '../config/music_player_colors.dart';
+import '../providers/music_player_provider.dart';
 import 'black_container.dart';
 import 'control_button.dart';
 import 'my_playlist.dart';
