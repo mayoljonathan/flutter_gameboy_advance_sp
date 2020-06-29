@@ -14,8 +14,9 @@ class MusicPlayerProvider extends ChangeNotifier {
   static final List<Music> _musicList = [
     Music(name: 'Flutter - Widget of the Week Intro', path: 'flutter_widget_of_the_week_intro.mp3'),
     Music(name: 'Flutter - Widget of the Week Outro', path: 'flutter_widget_of_the_week_outro.mp3'),
-    Music(name: 'Elevator Ride', path: '524235__sheyvan__elevator-ride-8.wav'),
-    Music(name: 'Techno sound design', path: '524256__jalastram__dark-techno-sound-design-04.wav'),
+    Music(name: 'Flutter in Focus', path: 'flutter_in_focus.mp3'),
+    Music(name: 'Flutter Interact', path: 'flutter_interact.mp3'),
+    Music(name: 'Flutter App Highlight Reel', path: 'flutter_app_highlight_reel.mp3'),
   ];
   List<Music> get musicList => _musicList;
 
