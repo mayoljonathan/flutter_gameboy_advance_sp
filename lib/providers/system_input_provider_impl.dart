@@ -46,6 +46,7 @@ class SystemInputProviderImpl {
       case Inputs.MENU:
         print('[System - onTap] Menu Button');
         this.inputProvider.onMenuTap();
+        System().toggleBrightness();
         break;
       case Inputs.SELECT:
         print('[System - onTap] Select Button');
@@ -105,7 +106,6 @@ class SystemInputProviderImpl {
       case Inputs.START:
         print('[System - onLongPress] Start Button');
         this.inputProvider.onStartLongPress();
-        System().unloadCartridge();
         break;
     }
   }

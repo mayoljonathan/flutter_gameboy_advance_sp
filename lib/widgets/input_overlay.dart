@@ -29,9 +29,9 @@ class InputOverlay extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: FractionalOffset(0.5, 0.077),
+              alignment: FractionalOffset(0.5, 0.067),
               child: CircleButton(
-                size: 20,
+                size: 30,
                 input: Input(Inputs.MENU),
               ),
             ),
@@ -44,16 +44,16 @@ class InputOverlay extends StatelessWidget {
               child: ActionButtonsPad(),
             ),
             Align(
-              alignment: FractionalOffset(0.42, 0.965),
+              alignment: FractionalOffset(0.42, 0.976),
               child: CircleButton(
-                size: 30,
+                size: 40,
                 input: Input(Inputs.SELECT),
               ),
             ),
             Align(
-              alignment: FractionalOffset(0.58, 0.965),
+              alignment: FractionalOffset(0.582, 0.976),
               child: CircleButton(
-                size: 30,
+                size: 40,
                 input: Input(Inputs.START),
               ),
             )

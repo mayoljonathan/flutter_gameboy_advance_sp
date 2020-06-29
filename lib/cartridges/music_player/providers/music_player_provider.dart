@@ -98,6 +98,10 @@ class MusicPlayerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void unload() {
+    _audioPlayer.stop();
+  }
+
   Audio _getCurrentMusic() {
     return _audioPlayer.playlist.audios
         .firstWhere((Audio audio) => audio.metas.id.toString() == currentMusicSelection.hashCode.toString());

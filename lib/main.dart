@@ -5,13 +5,26 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 import 'cartridges/music_player/music_player_cartridge.dart';
 import 'cartridges/music_player/providers/music_player_input_provider_impl.dart';
-import 'cartridges/music_player/providers/music_player_provider.dart';
+import 'cartridges/number_counter/number_counter_cartridge.dart';
+import 'cartridges/number_counter/providers/number_counter_input_provider_impl.dart';
+import 'models/cartridge.dart';
 import 'providers/system_input_provider_impl.dart';
 import 'screens/main_screen.dart';
 import 'system.dart';
 
 System _system = System();
-MusicPlayerInputProviderImpl _musicPlayerInputProviderImpl = MusicPlayerInputProviderImpl();
+List<CartRidge> _cartRidges = [
+  CartRidge(
+    name: 'Music Player',
+    widget: MusicPlayerCartridge(),
+    inputProvider: MusicPlayerInputProviderImpl(),
+  ),
+  CartRidge(
+    name: 'Number Counter',
+    widget: NumberCounterCartridge(),
+    inputProvider: NumberCounterInputProviderImpl(),
+  ),
+];
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,9 +32,9 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await SystemChrome.setEnabledSystemUIOverlays([]);
 
-  runApp(Gameboy());
+  _system.selectCartridge(_cartRidges.first);
 
-  _system.loadCartridge(MusicPlayerCartridge());
+  runApp(Gameboy());
 }
 
 class Gameboy extends StatelessWidget {
@@ -29,12 +42,10 @@ class Gameboy extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        Provider<List<CartRidge>>.value(value: _cartRidges),
         ChangeNotifierProvider<System>.value(value: _system),
-        Provider<SystemInputProviderImpl>(
-          create: (_) => SystemInputProviderImpl(_musicPlayerInputProviderImpl),
-        ),
-        ChangeNotifierProvider<MusicPlayerProvider>(
-          create: (_) => MusicPlayerProvider(),
+        ProxyProvider<System, SystemInputProviderImpl>(
+          update: (_, System system, __) => SystemInputProviderImpl(_system.selectedCartridge.inputProvider),
         )
       ],
       child: MaterialApp(
