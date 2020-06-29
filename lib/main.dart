@@ -20,7 +20,7 @@ List<CartRidge> _cartRidges = [
     inputProvider: MusicPlayerInputProviderImpl(),
   ),
   CartRidge(
-    name: 'Number Counter',
+    name: 'Flutter Counter',
     widget: NumberCounterCartridge(),
     inputProvider: NumberCounterInputProviderImpl(),
   ),

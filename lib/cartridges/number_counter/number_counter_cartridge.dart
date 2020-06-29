@@ -40,12 +40,15 @@ class HomeScreen extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('A = increment'),
-                Text('B = decrement'),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 12.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('A = increment'),
+                  Text('B = decrement'),
+                ],
+              ),
             ),
           )
         ],
