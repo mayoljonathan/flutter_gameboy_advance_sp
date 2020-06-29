@@ -13,5 +13,8 @@ Never held a Gameboy console? This app simulates the look of a Gameboy Advance S
 - Flutter Counter
 
 ## Web Version (unstable)
-https://mayoljonathan.github.io/flutter_gameboy_advance_sp
+[View Web Version](https://mayoljonathan.github.io/flutter_gameboy_advance_sp)
 > Not fully responsive and layout breaks
+
+## Mobile Version
+[Download Android APK](https://github.com/mayoljonathan/flutter_gameboy_advance_sp/releases/download/v1.0.0/flutter_gameboy.v1.0.0.apk)
