@@ -14,24 +14,11 @@ class DisplayScreen extends StatelessWidget {
       ),
       child: AspectRatio(
         aspectRatio: 3 / 2,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            fontFamily: 'AtlantisInternational',
-            primarySwatch: Colors.green,
-            textTheme: TextTheme(
-              body1: TextStyle(
-                color: Color(0xFF08D507),
-                fontSize: 24.0,
-              ),
-            ),
-          ),
-          home: Builder(
-            builder: (context) => Selector<System, Widget>(
-              selector: (_, model) => model.widget,
-              builder: (_, Widget widget, Widget child) => widget ?? child,
-              child: Container(color: Colors.black),
-            ),
+        child: Builder(
+          builder: (context) => Selector<System, Widget>(
+            selector: (_, model) => model.widget,
+            builder: (_, Widget widget, Widget child) => widget ?? child,
+            child: Container(color: Colors.black),
           ),
         ),
       ),
