@@ -36,8 +36,9 @@ class System extends ChangeNotifier {
   bool get hasLoadedCartridge => _hasLoadedCartridge;
 
   void loadCartridge(CartRidge cartridge) async {
-    print('[loadCartridge] ${cartridge.name}');
+    if (hasLoadedCartridge) return;
 
+    print('[loadCartridge] ${cartridge.name}');
     // TODO: Bug
     // _audioPlayer.open(
     //   Audio(Assets.GAMEBOY_ADVANCE_SP_CARTRIDGE_INSERT),
