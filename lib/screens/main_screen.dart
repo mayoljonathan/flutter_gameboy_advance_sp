@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gameboy_advance_sp/config/inputs.dart';
-import 'package:flutter_gameboy_advance_sp/models/input.dart';
-import 'package:flutter_gameboy_advance_sp/system.dart';
-import 'package:flutter_gameboy_advance_sp/widgets/action_buttons_pad.dart';
-import 'package:flutter_gameboy_advance_sp/widgets/cartridge_chooser.dart';
-import 'package:flutter_gameboy_advance_sp/widgets/circle_button.dart';
-import 'package:flutter_gameboy_advance_sp/widgets/directional_pad.dart';
-import 'package:flutter_gameboy_advance_sp/widgets/shoulder_button.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-import '../widgets/input_overlay.dart';
 import '../config/assets.dart';
+import '../system.dart';
+import '../widgets/cartridge_chooser.dart';
+import '../widgets/input_overlay.dart';
 import 'display_screen.dart';
 
 class MainScreen extends StatefulWidget {
