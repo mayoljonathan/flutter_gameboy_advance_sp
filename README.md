@@ -3,6 +3,7 @@
 </a>
 
 # Flutter Gameboy
+[![Codemagic build status](https://api.codemagic.io/apps/5f0025a68553e9000a30c99d/5f0025a68553e9000a30c99c/status_badge.svg)](https://codemagic.io/apps/5f0025a68553e9000a30c99d/5f0025a68553e9000a30c99c/latest_build)
 
 > <a href="https://www.youtube.com/watch?v=6BeX6jx8bqE">See demo video</a> of my Flutter Hackathon entry for Retro Theme! #Hack20
 
