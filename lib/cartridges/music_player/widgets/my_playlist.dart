@@ -20,9 +20,6 @@ class _MyPlaylistState extends State<MyPlaylist> {
     final musicPlayer = context.watch<MusicPlayerProvider>();
 
     return BlackContainer(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 12.0,
-      ),
       child: ScrollablePositionedList.builder(
         physics: NeverScrollableScrollPhysics(),
         itemCount: musicPlayer.playlist.length,

@@ -5,16 +5,14 @@ import '../../../config/assets.dart';
 class TitleBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 80,
       child: Stack(
         children: [
           Center(
             child: Text(
               'Music Player',
-              style: TextStyle(
-                fontSize: 36.0,
-              ),
+              style: Theme.of(context).textTheme.headline6,
             ),
           ),
           Align(
@@ -26,9 +24,7 @@ class TitleBanner extends StatelessWidget {
                 children: [
                   Text(
                     'Built with Flutter',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                    ),
+                    style: Theme.of(context).textTheme.caption,
                   ),
                   Image.asset(
                     Assets.FLUTTER_LOGO_PIXELATED,

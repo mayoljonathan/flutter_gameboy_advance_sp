@@ -6,7 +6,7 @@ class BlackContainer extends StatelessWidget {
     this.child,
     this.width,
     this.height,
-    this.padding = const EdgeInsets.symmetric(horizontal: 3.0),
+    this.padding = const EdgeInsets.symmetric(horizontal: 6.0),
   }) : super(key: key);
 
   final Widget child;
@@ -17,6 +17,9 @@ class BlackContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: BoxConstraints(
+        minHeight: 20,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
         color: Colors.black,
@@ -32,7 +35,9 @@ class BlackContainer extends StatelessWidget {
       width: width,
       height: height,
       padding: padding,
-      child: child,
+      child: Center(
+        child: child,
+      ),
     );
   }
 }
