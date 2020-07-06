@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gameboy_advance_sp/cartridges/music_player/config/music_player_colors.dart';
+
+import '../config/music_player_colors.dart';
 
 class ControlButton extends StatefulWidget {
   ControlButton({
@@ -18,7 +19,7 @@ class ControlButton extends StatefulWidget {
 class _ControlButtonState extends State<ControlButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3.0),
         boxShadow: [
@@ -35,6 +36,7 @@ class _ControlButtonState extends State<ControlButton> {
         child: Icon(
           widget.iconData,
           color: widget.isPressed ? MusicPlayerColors.buttonPressed : Colors.white,
+          size: 20.0,
         ),
       ),
     );

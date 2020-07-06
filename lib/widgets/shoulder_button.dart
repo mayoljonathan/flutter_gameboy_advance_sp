@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
 import '../models/input.dart';
 import '../providers/system_input_provider_impl.dart';
@@ -17,8 +18,8 @@ class ShoulderButton extends StatelessWidget {
       onLongPress: () => context.read<SystemInputProviderImpl>().onLongPress(input),
       child: Container(
         color: kReleaseMode ? Colors.transparent : Colors.yellow.withOpacity(0.3),
-        width: 68,
-        height: 43,
+        width: 155.h,
+        height: 98.h,
       ),
     );
   }

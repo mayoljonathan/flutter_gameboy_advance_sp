@@ -33,51 +33,51 @@ class _CartRidgeChooserState extends State<CartRidgeChooser> {
   Widget build(BuildContext context) {
     final cartRidges = context.watch<List<CartRidge>>();
 
-    return Container(
-      color: Colors.transparent,
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 12.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+    return Column(
+      children: [
+        Expanded(
+          child: Stack(
+            children: [
+              PageView(
+                physics: BouncingScrollPhysics(),
+                controller: _pageController,
+                onPageChanged: (int index) => _system.selectCartridge(cartRidges[index]),
                 children: [
-                  _buildGuideText('Swipe down to load cartridge'),
-                  _buildGuideText('Swipe up to unload cartridge'),
+                  for (final cartRidge in cartRidges) CartRidgeItem(name: cartRidge.name),
                 ],
               ),
-            ),
-          ),
-          PageView(
-            physics: BouncingScrollPhysics(),
-            controller: _pageController,
-            onPageChanged: (int index) => _system.selectCartridge(cartRidges[index]),
-            children: [
-              for (final cartRidge in cartRidges) CartRidgeItem(name: cartRidge.name),
+              if (_shouldShowArrowRight(false))
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(
+                    Icons.arrow_left,
+                    color: Colors.white,
+                    size: 48.0,
+                  ),
+                ),
+              if (_shouldShowArrowRight(true))
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Icon(
+                    Icons.arrow_right,
+                    color: Colors.white,
+                    size: 48.0,
+                  ),
+                ),
             ],
           ),
-          if (_shouldShowArrowRight(false))
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Icon(
-                Icons.arrow_left,
-                color: Colors.white,
-                size: 48.0,
-              ),
-            ),
-          if (_shouldShowArrowRight(true))
-            Align(
-              alignment: Alignment.centerRight,
-              child: Icon(
-                Icons.arrow_right,
-                color: Colors.white,
-                size: 48.0,
-              ),
-            ),
-        ],
-      ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              _buildGuideText('Swipe down to load cartridge'),
+              _buildGuideText('Swipe up to unload cartridge'),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
@@ -86,7 +86,7 @@ class _CartRidgeChooserState extends State<CartRidgeChooser> {
       text,
       style: TextStyle(
         color: Colors.white,
-        fontSize: 24,
+        fontSize: 20,
         fontFamily: 'AtlantisInternational',
       ),
     );

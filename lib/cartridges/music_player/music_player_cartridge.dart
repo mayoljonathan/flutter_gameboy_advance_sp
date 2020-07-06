@@ -17,10 +17,19 @@ class MusicPlayerCartridge extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'AtlantisInternational',
           primarySwatch: Colors.green,
+          primaryColor: Colors.red,
           textTheme: TextTheme(
-            body1: TextStyle(
+            headline6: TextStyle(
               color: Color(0xFF08D507),
-              fontSize: 24.0,
+              fontSize: 30.0,
+            ),
+            bodyText2: TextStyle(
+              color: Color(0xFF08D507),
+              fontSize: 18.0,
+            ),
+            caption: TextStyle(
+              color: Color(0xFF08D507),
+              fontSize: 16.0,
             ),
           ),
         ),

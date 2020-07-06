@@ -9,7 +9,7 @@ class CircleButton extends StatelessWidget {
   const CircleButton({
     Key key,
     @required this.input,
-    this.size = 55,
+    @required this.size,
   });
 
   final Input input;

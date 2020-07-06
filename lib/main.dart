@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:marquee/marquee.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 import 'cartridges/music_player/music_player_cartridge.dart';
 import 'cartridges/music_player/providers/music_player_input_provider_impl.dart';
@@ -58,17 +56,6 @@ class Gameboy extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         debugShowCheckedModeBanner: false,
-        builder: (_, child) {
-          return ResponsiveWrapper.builder(
-            child,
-            maxWidth: 480,
-            minWidth: 480,
-            defaultScale: true,
-            breakpoints: [
-              ResponsiveBreakpoint.resize(480, name: MOBILE),
-            ],
-          );
-        },
         home: MainScreen(),
       ),
     );
